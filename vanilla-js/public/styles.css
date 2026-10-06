@@ -1,0 +1,63 @@
+:root {
+  --bg: #0f1115;
+  --panel: #1a1d24;
+  --text: #e8e8ea;
+  --muted: #9aa0aa;
+  --accent: #6c8cff;
+  --danger: #ff6b6b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 16px; }
+
+.header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+.header h1 { font-size: 1.5rem; margin: 8px 0; }
+.quota { font-size: 0.85rem; color: var(--muted); background: var(--panel); padding: 4px 10px; border-radius: 999px; }
+
+.chips { display: flex; gap: 8px; overflow-x: auto; padding: 12px 0; }
+.chip {
+  flex: none; border: 1px solid #2c303a; background: var(--panel); color: var(--text);
+  padding: 6px 14px; border-radius: 999px; cursor: pointer; font: inherit;
+}
+.chip small { color: var(--muted); }
+.chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.chip.active small { color: #e6ebff; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
+.card {
+  padding: 0; border: 0; background: var(--panel); border-radius: 10px; overflow: hidden;
+  aspect-ratio: 9 / 16; cursor: pointer;
+}
+.card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.2s; }
+.card:hover img { transform: scale(1.04); }
+
+.more { display: flex; justify-content: center; padding: 24px 0; }
+.button {
+  display: inline-block; border: 0; background: var(--accent); color: #fff; text-decoration: none;
+  padding: 8px 16px; border-radius: 8px; cursor: pointer; font: inherit;
+}
+.button:disabled { opacity: 0.6; cursor: default; }
+.button.secondary { background: #2c303a; }
+
+.muted { color: var(--muted); text-align: center; }
+.error { background: #3a1d1f; color: var(--danger); padding: 10px 14px; border-radius: 8px; margin: 8px 0; }
+
+.overlay {
+  position: fixed; inset: 0; background: rgba(0, 0, 0, 0.85);
+  display: flex; align-items: center; justify-content: center; padding: 16px; z-index: 10;
+}
+.viewer { max-width: 100%; max-height: 100%; display: flex; flex-direction: column; gap: 10px; }
+.viewer img { max-width: 100%; max-height: calc(100vh - 110px); object-fit: contain; border-radius: 8px; }
+.viewer-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; }
+.actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* Elements toggled with the hidden attribute must stay hidden even with display rules above. */
+[hidden] { display: none !important; }

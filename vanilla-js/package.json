@@ -1,0 +1,15 @@
+{
+  "name": "nexwall-vanilla-js-wallpaper-starter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Plain HTML/CSS/JS wallpaper gallery with a zero-dependency Node.js proxy for the free NexWall Wallpaper API",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "check": "node --check server.mjs && node --check public/app.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

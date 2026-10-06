@@ -1,0 +1,34 @@
+# dependencies
+node_modules/
+vendor/
+
+# Next.js
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# build output
+build/
+dist/
+
+# local env files (never commit your API key)
+.env
+.env.*
+!.env.example
+
+# Laravel (if you test the drop-in files inside a real app)
+storage/*.key
+.phpunit.result.cache
+
+# logs / debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+*.log
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

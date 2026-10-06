@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NexWall Wallpapers (vanilla JS starter)</title>
+  <link rel="stylesheet" href="styles.css">
+  <!--
+    Where the API proxy lives. Defaults to "/api" (server.mjs or the Next.js example).
+    For the Laravel example use "/nexwall-api":
+    <script>window.NEXWALL_API_BASE = "/nexwall-api";</script>
+  -->
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>NexWall Wallpapers</h1>
+      <span id="quota" class="quota" hidden></span>
+    </header>
+
+    <nav id="chips" class="chips" aria-label="Categories"></nav>
+
+    <div id="error" class="error" role="alert" hidden></div>
+
+    <section id="grid" class="grid"></section>
+
+    <p id="empty" class="muted" hidden>No wallpapers found.</p>
+
+    <div class="more">
+      <button id="more" class="button" hidden>Load more</button>
+    </div>
+  </main>
+
+  <div id="overlay" class="overlay" role="dialog" aria-modal="true" hidden>
+    <div class="viewer">
+      <img id="viewer-img" alt="">
+      <div class="viewer-bar">
+        <span id="viewer-info"></span>
+        <span class="actions">
+          <a id="viewer-open" class="button" target="_blank" rel="noopener noreferrer">Open full image</a>
+          <a id="viewer-download" class="button" target="_blank" rel="noopener noreferrer" download>Download</a>
+          <button id="viewer-close" class="button secondary">Close</button>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
